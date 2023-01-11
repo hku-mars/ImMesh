@@ -5,21 +5,27 @@
 <img src="https://github.com/ziv-lin/ImMesh_release/blob/main/pics/island_appendix.jpg" alt="video" width="100%" />
 </div>
 
-## **Date of code release**
-Our paper is currently under review, and the code of ImMesh will be released as our work is accepted.
-
 ## 1. Introduction
 **ImMesh** is a novel LiDAR(-inertial) odometry and meshing framework, which takes advantage of input of LiDAR data, achieving the goal of **simultaneous localization and meshing** in real-time. ImMesh comprises four tightly-coupled modules: receiver, localization, meshing, and broadcaster. The localization module utilizes the prepossessed sensor data from the receiver, estimates the sensor pose online by registering LiDAR scans to maps, and dynamically grows the map. Then, our meshing module takes the registered LiDAR scan for **incrementally reconstructing the triangle mesh on the fly**. Finally, the real-time odometry, map, and mesh are published via our broadcaster.
 <div align="center">
 <img src="https://github.com/ziv-lin/ImMesh_release/blob/main/pics/overview_v7.jpg" alt="video" width="100%" />
 </div>
 
+## **Date of code release**
+Our paper is currently under review, and **the code of ImMesh will be released as our work is accepted**. However, our previous SLAM works [R3LIVE](https://github.com/hku-mars/r3live), [VoxelMap](https://github.com/hku-mars/VoxelMap), [FAST-LIO](https://github.com/hku-mars/FAST_LIO), [R2LIVE](https://github.com/hku-mars/r2live), and [ikd-Tree](https://github.com/hku-mars/ikd-Tree) are now avaiable on our github.
+
+1. [R3LIVE: A Robust, Real-time, RGB-colored, LiDAR-Inertial-Visual tightly-coupled state Estimation and mapping package](https://github.com/hku-mars/r3live)
+2. [VoxelMap: An efficient and probabilistic adaptive(coarse-to-fine) voxel mapping method for 3D LiDAR](https://github.com/hku-mars/VoxelMap)
+3. [FAST-LIO: A computationally efficient and robust LiDAR-inertial odometry (LIO) package](https://github.com/hku-mars/FAST_LIO)
+4. [R2LIVE: a robust, real-time tightly-coupled multi-sensor fusion framework](https://github.com/hku-mars/r2live)
+5.  [ikd-Tree: an incremental k-d tree designed for robotic applications](https://github.com/hku-mars/ikd-Tree) 
+
+
 ### 1.1 Our paper
 Will be released in recent days...
 
-
 ### 1.2 Our accompanying videos
-Our **accompanying videos** are now available on **YouTube** (click below images to open) and **Bilibili**<sup>[1](https://youtu.be/pzT2fMwz428), [2](https://youtu.be/pzT2fMwz428), [3](https://youtu.be/pzT2fMwz428)</sup>.
+Our **accompanying videos** are now available on **YouTube** (click below images to open) and **Bilibili**<sup>[1]( https://www.bilibili.com/video/BV1AG4y1177z), [2](https://www.bilibili.com/video/BV1Xd4y1j7on/), [3](https://www.bilibili.com/video/BV1W8411N7D2)</sup>.
 
 <div align="center">
 <a href="https://youtu.be/pzT2fMwz428" target="_blank"><img src="https://github.com/ziv-lin/ImMesh_release/blob/main/pics/video_cover.jpg" alt="video" width="48%" /></a>
@@ -52,3 +58,6 @@ Our **accompanying videos** are now available on **YouTube** (click below images
 <img src="https://github.com/ziv-lin/ImMesh_release/blob/main/pics/gifs/application_2_trial_2-0.gif"  width="48%" />
 <img src="https://github.com/ziv-lin/ImMesh_release/blob/main/pics/gifs/application_2_trial_2-1.gif"  width="48%" />
 </div>
+
+## 3. Contact us
+If you have any questions about this work, please feel free to contact me <ziv.lin.ljrATgmail.com> and Dr. Fu Zhang <fuzhangAThku.hk> via email.
