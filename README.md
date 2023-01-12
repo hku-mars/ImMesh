@@ -22,7 +22,7 @@ Our paper is currently under review, and **the code of ImMesh will be released a
 
 
 ### 1.1 Our paper
-Will be released in recent days...
+Our preprint paper is now can be downloaded [here](https://github.com/hku-mars/ImMesh/blob/main/paper/ImMesh_v0.pdf).
 
 ### 1.2 Our accompanying videos
 Our **accompanying videos** are now available on **YouTube** (click below images to open) and **Bilibili**<sup>[1]( https://www.bilibili.com/video/BV1AG4y1177z), [2](https://www.bilibili.com/video/BV1Xd4y1j7on/), [3](https://www.bilibili.com/video/BV1W8411N7D2)</sup>.
