@@ -1,33 +1,28 @@
-# ImMesh
-## ImMesh: An **Im**mediate LiDAR Localization and **Mesh**ing Framework
+# ImMesh: An **Im**mediate LiDAR Localization and **Mesh**ing Framework
+
+
+## News (Nov, 2023): ImMesh is accepted to [T-RO](https://ieeexplore.ieee.org/document/10304337)
+Our research has been accepted for publication in ***IEEE Transactions on Robotics (T-RO)*** ([**avaible here**](https://ieeexplore.ieee.org/document/10304337)). We plan to release our work codes as we have promised. Before that, we still need to improve our codes by following the suggestions of reviewers, and need to refactor our code to make it clearer and cleaner.
+
+Due to the busy timeline near and after my graduation, **I anticipate releasing my codes no later than the 2024 Spring Festival (i.e., February 10, 2024).**
+
+### Date of code release:
+ No later than **<u>Feb 10, 2024</u> (Chinese New Year 2024).**
+
+
+## **1. Introduction**
 <div align="center">
 <img src="https://github.com/ziv-lin/ImMesh_release/raw/main/pics/cover_v4.jpg" alt="video" width="100%" />
 <img src="https://github.com/ziv-lin/ImMesh_release/raw/main/pics/island_appendix.jpg" alt="video" width="100%" />
 </div>
-
-## **1. Introduction**
 **ImMesh** is a novel LiDAR(-inertial) odometry and meshing framework, which takes advantage of input of LiDAR data, achieving the goal of **simultaneous localization and meshing** in real-time. ImMesh comprises four tightly-coupled modules: receiver, localization, meshing, and broadcaster. The localization module utilizes the prepossessed sensor data from the receiver, estimates the sensor pose online by registering LiDAR scans to maps, and dynamically grows the map. Then, our meshing module takes the registered LiDAR scan for **incrementally reconstructing the triangle mesh on the fly**. Finally, the real-time odometry, map, and mesh are published via our broadcaster.
 
-### **Any question?**
-For any technical problem about this work, please feel free to contact me via [**www.jiaronglin.com**](https://jiaronglin.com/) :)
-
 <div align="center">
-<img src="https://github.com/ziv-lin/ImMesh_release/raw/main/pics/overview_v7.jpg" alt="video" width="100%" />
+<img src="https://github.com/ziv-lin/ImMesh_release/raw/main/pics/overview.jpg" alt="video" width="100%" />
 </div>
 
-
-## **Date of code release**
-Our paper is currently under review, and **the code of ImMesh will be released as our work is accepted**. However, our previous SLAM works [R3LIVE](https://github.com/hku-mars/r3live), [VoxelMap](https://github.com/hku-mars/VoxelMap), [FAST-LIO](https://github.com/hku-mars/FAST_LIO), [R2LIVE](https://github.com/hku-mars/r2live), and [ikd-Tree](https://github.com/hku-mars/ikd-Tree) are now available on our github.
-
-1. [R3LIVE: A Robust, Real-time, RGB-colored, LiDAR-Inertial-Visual tightly-coupled state Estimation and mapping package](https://github.com/hku-mars/r3live)
-2. [VoxelMap: An efficient and probabilistic adaptive(coarse-to-fine) voxel mapping method for 3D LiDAR](https://github.com/hku-mars/VoxelMap)
-3. [FAST-LIO: A computationally efficient and robust LiDAR-inertial odometry (LIO) package](https://github.com/hku-mars/FAST_LIO)
-4. [R2LIVE: a robust, real-time tightly-coupled multi-sensor fusion framework](https://github.com/hku-mars/r2live)
-5.  [ikd-Tree: an incremental k-d tree designed for robotic applications](https://github.com/hku-mars/ikd-Tree) 
-
-
 ### 1.1 Our paper
-Our preprint paper is now can be downloaded [here](https://github.com/hku-mars/ImMesh/raw/main/paper/ImMesh_v0.pdf).
+Our research paper can be [accessed from T-RO](https://ieeexplore.ieee.org/document/10304337) or be downloaded [here](https://github.com/hku-mars/ImMesh/raw/main/paper/ImMesh_tro.pdf).
 
 ### 1.2 Our accompanying videos
 Our **accompanying videos** are now available on **YouTube** (click below images to open) and **Bilibili**<sup>[1]( https://www.bilibili.com/video/BV1AG4y1177z), [2](https://www.bilibili.com/video/BV1Xd4y1j7on/), [3](https://www.bilibili.com/video/BV1W8411N7D2)</sup>.
@@ -64,5 +59,16 @@ Our **accompanying videos** are now available on **YouTube** (click below images
 <img src="https://github.com/ziv-lin/ImMesh_release/raw/main/pics/gifs/application_2_trial_2-1.gif"  width="48%" />
 </div>
 
+## Related works
+
+ImMesh is building upon the foundations of our previous SLAM works including  [R3LIVE](https://github.com/hku-mars/r3live), [VoxelMap](https://github.com/hku-mars/VoxelMap), [FAST-LIO](https://github.com/hku-mars/FAST_LIO), [R2LIVE](https://github.com/hku-mars/r2live), and [ikd-Tree](https://github.com/hku-mars/ikd-Tree). These works are all available on our GitHub, as listed below:
+
+1. [R3LIVE: A Robust, Real-time, RGB-colored, LiDAR-Inertial-Visual tightly-coupled state Estimation and mapping package](https://github.com/hku-mars/r3live)
+2. [VoxelMap: An efficient and probabilistic adaptive(coarse-to-fine) voxel mapping method for 3D LiDAR](https://github.com/hku-mars/VoxelMap)
+3. [FAST-LIO: A computationally efficient and robust LiDAR-inertial odometry (LIO) package](https://github.com/hku-mars/FAST_LIO)
+4. [R2LIVE: a robust, real-time tightly-coupled multi-sensor fusion framework](https://github.com/hku-mars/r2live)
+5.  [ikd-Tree: an incremental k-d tree designed for robotic applications](https://github.com/hku-mars/ikd-Tree) 
+
 ## **3. Contact us**
 If you have any questions about this work, please feel free to contact me via [**www.jiaronglin.com**](https://jiaronglin.com/) and Dr. Fu Zhang <fuzhangAThku.hk> via email.
+
