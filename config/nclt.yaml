@@ -1,0 +1,86 @@
+feature_extract_enable : 0
+point_filter_num : 10
+max_iteration : 2
+dense_map_enable : 0
+filter_size_surf : 0.75
+filter_size_map : 0.75
+cube_side_length : 1000
+debug : 0
+min_img_count : 150000
+grid_size : 40
+patch_size : 8
+img_enable : 0
+lidar_enable : 1
+outlier_threshold : 78 # 78 100 156
+img_point_cov : 1000 #100
+laser_point_cov : 0.001 #0.001
+
+common:
+    lid_topic:  "/points_raw"
+    imu_topic:  "/imu_raw"
+
+preprocess:
+    lidar_type: 6               # Velodyne32 Lidar
+    scan_line: 32
+    timestamp_unit: 2
+    blind: 1 # blind x m disable
+    calib_laser: false              # true for KITTI Odometry dataset
+
+mapping:
+    imu_en: true
+    imu_int_frame: 30
+    acc_cov: 0.5
+    gyr_cov: 0.3
+    fov_degree:    180
+    extrinsic_T: [ 0.0, 0.0, 0.28]
+    extrinsic_R: [ 1, 0, 0,
+                   0, 1, 0,
+                   0, 0, 1]
+
+voxel:
+    voxel_map_en: true
+    pub_plane_en: false
+    dept_err: 0.03
+    beam_err: 0.1
+    min_eigen_value: 0.01
+    match_s: 0.9
+    sigma_num: 3
+    voxel_size: 2
+    max_layer: 2
+    max_points_size: 100
+    layer_init_size: [5,5,5,5,5]
+
+
+camera:
+    img_topic: /left_camera/image
+    Rcl: [ 0.000910902,   -0.999994,  0.00343779, # new extrinsic
+          -0.0101394,     -0.00344672,   -0.999943,
+           0.999948,       0.000875869,  -0.0101423]
+    Pcl: [0.051708, -0.004601, -0.023075]
+    
+publish:
+    path_en:  false
+    scan_publish_en:  true       # false: close all the point cloud output
+    dense_publish_en: false       # false: low down the points number in a global-frame point clouds scan.
+    scan_bodyframe_pub_en: false  # true: output the point cloud scans in IMU-body-frame
+    effect_point_pub: true
+    pub_point_skip: 100
+
+pcd_save:
+    pcd_save_en: false
+    type: 0                      # 0 - World Frame, 1 - Body Frame;
+    interval: -1                  # how many LiDAR frames saved in each pcd file; 
+                                 # -1 : all frames will be saved in ONE pcd file, may lead to memory crash when having too much frames.
+
+image_save:
+    img_save_en: false
+    rot_dist: 0.0 # 0.05
+    pos_dist: 0.0 # 0.15
+    interval: 1
+
+meshing:
+    points_minimum_scale: 0.1       # The minimum distance between any of two points
+    voxel_resolution: 0.4           # The resolution of voxel
+    region_size: 10.0               # Size of region
+    number_of_pts_append_to_map: 10000  # Number of pts appending to map (per-frame)
+    if_draw_mesh: 1

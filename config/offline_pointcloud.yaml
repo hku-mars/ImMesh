@@ -1,0 +1,73 @@
+feature_extract_enable : 0
+point_filter_num : 1
+max_iteration : 4
+dense_map_enable : 1
+filter_size_surf : 0.4
+filter_size_map : 0.4
+cube_side_length : 1000
+debug : 0
+min_img_count : 150000
+grid_size : 40
+patch_size : 8
+img_enable : 0
+lidar_enable : 1
+outlier_threshold : 78 # 78 100 156
+img_point_cov : 1000 #100
+laser_point_cov : 0.001 #0.001
+
+common:
+    lid_topic:  "/livox/lidar"
+    imu_topic:  "/livox/imu"
+
+preprocess:
+    lidar_type: 1               # Livox Avia LiDAR
+    scan_line: 6
+    blind: 1 # blind x m disable
+
+mapping:
+    imu_en: true
+    imu_int_frame: 30
+    acc_cov: 0.5
+    gyr_cov: 0.3
+    b_acc_cov: 0.01
+    b_gyr_cov: 0.01
+    fov_degree:    180
+    extrinsic_T: [ 0.04165, 0.02326, -0.0284 ]
+    extrinsic_R: [ 1, 0, 0,
+                   0, 1, 0,
+                   0, 0, 1]
+
+voxel:
+    voxel_map_en: true
+    pub_plane_en: false
+    dept_err: 0.02
+    beam_err: 0.05
+    min_eigen_value: 0.01
+    match_s: 0.9
+    sigma_num: 3
+    voxel_size: 0.5
+    max_layer: 2
+    max_points_size: 100
+    layer_init_size: [5,5,5,5,5]
+    
+publish:
+    path_en:  false
+    scan_publish_en:  true       # false: close all the point cloud output
+    dense_publish_en: false       # false: low down the points number in a global-frame point clouds scan.
+    scan_bodyframe_pub_en: false  # true: output the point cloud scans in IMU-body-frame
+    effect_point_pub: true
+
+image_save:
+    img_save_en: false
+    rot_dist: 0.0 # 0.05
+    pos_dist: 0.0 # 0.15
+    interval: 1
+ 
+meshing:
+    distance_scale: 1.0                   # The global distance scale
+    points_minimum_scale: 0.1             # The minimum distance between any of two points
+    voxel_resolution: 0.4                 # The resolution of voxel
+    region_size: 10.0                     # Size of region
+    number_of_pts_append_to_map: 50000000 # Number of pts appending to map (per-frame)
+    if_draw_mesh: 1
+    enable_mesh_rec: 1

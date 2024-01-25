@@ -1,0 +1,14 @@
+<launch>
+	<arg name="rviz" default="false" />
+	<rosparam command="load" file="$(find ImMesh)/config/nclt.yaml" />
+	<param name="meshing/distance_scale" type="double" value="1.0" /> 
+	<param name="gui_font_size" type="int" value="20" /> 
+	
+	<node pkg="ImMesh" type="ImMesh_mapping" name="laserMapping" output="screen">
+	</node>
+	
+	<group if="$(arg rviz)">
+		<node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find ImMesh)/rviz_cfg/ImMesh.rviz" />
+	</group>
+	
+</launch> 	
